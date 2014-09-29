@@ -1,4 +1,5 @@
 // Setup basic express server
+var path = require('path');
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -43,4 +44,4 @@ test.on("connection", function(socket){
 });
 
 // Routing
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
