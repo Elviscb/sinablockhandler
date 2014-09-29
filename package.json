@@ -1,9 +1,9 @@
 {
-  "name": "sina spider server",
+  "name": "sinaObserverServer",
   "version": "0.0.0",
   "description": "A simple chat client using socket.io",
   "main": "app.js",
-  "author": "Grant Timmerman",
+  "author": "Cui Bin",
   "private": true,
   "license": "BSD",
   "dependencies": {
