@@ -7,6 +7,11 @@ var io = require('socket.io')(server);
 var port = process.env.PORT || 3331;
 var distributor = require("./distributor.js")(io);
 
+app.configure(function () {
+	// Routing
+	app.use(express.static(path.join(__dirname, 'public')));
+});
+
 app.get("/", function(req, res){
 	res.sendfile("public/index.html");
 });
@@ -42,6 +47,3 @@ test.on("connection", function(socket){
 	
 	socket.disconnect();
 });
-
-// Routing
-app.use(express.static(path.join(__dirname, 'public')));
