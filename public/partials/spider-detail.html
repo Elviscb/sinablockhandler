@@ -1,0 +1,43 @@
+<h4 class="spider-title" ><a href="#list">Spider</a> - <small>{{spiderid}}</small></h4>
+
+<dl>
+	<dt>mession</dt>
+	<dd>{{spiders[spiderid].mession}}</dd>
+</dl>
+
+<dl>
+	<dt>mession_arguments</dt>
+	<dd>{{spiders[spiderid].mession_arguments}}</dd>
+</dl>
+
+<dl>
+	<dt>ontime</dt>
+	<dd>{{spiders[spiderid].ontime | restTime}}</dd>
+</dl>
+
+<dl>
+	<dt>starttime</dt>
+	<dd>{{spiders[spiderid].starttime | df}}</dd>
+</dl>
+
+<dl>
+	<dt>status</dt>
+	<dd>{{spiders[spiderid].status}}</dd>
+</dl>
+
+<dl>
+	<dt>task_data</dt>
+	<dd class="container-fluid tasks">
+		<div class="row">
+			<div class="col-md-6" ng-repeat="(tdn,td) in spiders[spiderid].task_data">
+				<div class="center-block">
+					<h5 class="spider-title"><bold>{{tdn}}</bold></h5>
+					<dl class="dl-horizontal" ng-repeat="(tdsn,tds) in td">
+						<dt>{{tdsn}}</dt>
+						<dd>{{tds}}</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</dd>
+</dl>

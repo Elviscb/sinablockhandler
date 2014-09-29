@@ -1,0 +1,31 @@
+<h5 class="spider-title">
+	<div ng-repeat="(k,v) in spider_com">
+	{{k}} : {{v}}
+	</div>
+</h5>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>任务</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(spiderid, spider) in spiders">
+		  <td><span class="spiderid"><a href="#/list/{{spiderid}}">{{$index+" - "+spiderid}}</a></span></td>
+		  <td><span class="spidermession">{{spider.mession}}</span></td>
+		  <td><span class="status">{{spider.status}}</span></td>
+		  <td>
+		  <div class="form-inline" style="white-space: nowrap;">
+		  <img class="code-img" ng-if="spider.blocker.data!=null" ng-src="{{spider.blocker.data}}">
+		  <input class="code-input form-control" type="text" ng-model="code">
+		  <span class="code-result" ng-model="code_result"></span>
+		  <button class="code-btn btn btn-default" ng-click="feed(spiderid, code);">ok</button>
+		  </div>
+		  </td>
+	  </tr>
+	</tbody>
+</table>

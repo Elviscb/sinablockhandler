@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crm spider observer - web</title>
+  <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/app.css">
+  <style type="text/css">
+  	table td{
+  		vertical-align: middle !important;
+  	}
+  </style>
+  <script type="text/template" id="template">
+  
+  </script>
+</head>
+<body ng-app='obApp'>
+
+  <div ng-controller="Main"></div>
+
+  <div id="box-container">
+  <div id="box" ng-view>
+	
+  </div>
+  </div>
+
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <script src="/components/angular/angular.min.js"></script>
+  <script src="/components/angular-route/angular-route.min.js"></script>
+  <script src="/components/angular-animate/angular-animate.min.js"></script>
+  <script src="/components/angular-socket-io/socket.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

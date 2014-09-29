@@ -1,0 +1,70 @@
+@-webkit-keyframes enter_sequence {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@keyframes enter_sequence {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-webkit-keyframes leave_sequence {
+	from {
+		opacity:1;
+	}
+	to {
+		opacity:0;
+	}
+}
+@keyframes leave_sequence {
+	from {
+		opacity:1;
+	}
+	to {
+		opacity:0;
+	}
+}
+#box-container {
+	position: relative;
+}
+#box.ng-enter, #box.ng-leave{
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+#box.ng-enter {
+	-webkit-animation: enter_sequence .1s linear; /* Safari/Chrome */
+	animation: enter_sequence .1s linear; /* IE10+ and Future Browsers */
+}
+#box.ng-leave {
+	-webkit-animation: leave_sequence .1s linear; /* Safari/Chrome */
+	animation: leave_sequence .1s linear; /* IE10+ and Future Browsers */
+}
+.spider-title{
+	border-bottom:1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+.tasks{
+
+}
+.tasks > .row{
+	padding-top: 10px;
+}
+
+.tasks > .row > div > div{
+	border: 1px solid #ccc;
+	background: #f8f8fe;
+}
+
+.tasks > .row > div > div > .spider-title{
+	background: #FCFCFC;
+	margin: 0 0 10px;
+	padding: 10px;
+}
