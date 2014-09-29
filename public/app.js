@@ -49,24 +49,35 @@ obApp.factory('Config',
 	  , socketFactory = new socketFactory({
 		  	prefix: 'socket~',
 		    ioSocket: socket
-		});
+		})
+	  , loop = function (data){
+			$.each(data, function(k, v){
+				delete data[k];
+				if($.isArray(v) || $.isPlainObject(v)){
+					data[decodeURI(k)] = loop(v);
+				}else if(v && v.substring)
+					data[decodeURI(k)] = decodeURI(v);
+				else data[decodeURI(k)] = v;
+			});
+			return data;
+		};
 	
 	socket.on("send spider", function(data){
 		$rootScope.$apply(function(){
-			if(data.spiderid) $rootScope.spiders[data.spiderid] = data.spider;
-			else $rootScope.spiders = data.spider;
+			if(data.spiderid) $rootScope.spiders[data.spiderid] = loop(data.spider);
+			else $rootScope.spiders = loop(data.spider);
 		});
 	});
 	
 	socket.on("change stat", function(data){
 		$rootScope.$apply(function(){
-			$rootScope.spiders[data.spiderid] = data.spider;
+			$rootScope.spiders[data.spiderid] = loop(data.spider);
 		});
 	});
 	
 	socket.on('get code', function(data){
 		$rootScope.$apply(function(){
-			$rootScope.spiders[data.spiderid] = data.spider;
+			$rootScope.spiders[data.spiderid] = loop(data.spider);
 		});
     });
 	
