@@ -1,22 +1,15 @@
 
-# Socket.IO Chat
+# Socket.IO Observer
 
-A simple chat demo for socket.io
+A observer server for Weibo.com spider
 
 ## How to use
 
 ```
 $ npm install
+$ bower install
 $ node .
 ```
 
-And point your browser to `http://localhost:3000`. Optionally specify
+And point your browser to `http://localhost:3331`. Optionally specify
 a port by supplying the `PORT` env variable.
-
-## Features
-
-- Multiple users can join a chat room by entering a unique username
-on website load.
-- Users can type chat messages to the chat room
-- A notification is sent to all users when a user joins or leaves
-the chatroom
